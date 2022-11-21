@@ -17,7 +17,7 @@ import com.nttdata.hibernate.services.interfaces.ClientManagementServiceI;
  * @author Ángel Díaz Avilés
  */
 public class ClientManagementServiceImpl implements ClientManagementServiceI {
-	/** CLiente Dao */
+	/** Cliente Dao */
 	private ClientDaoI clientDao;
 
 	/**

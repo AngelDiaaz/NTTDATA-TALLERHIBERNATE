@@ -1,12 +1,14 @@
 package com.nttdata.hibernate.persistence.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -27,6 +29,7 @@ public class Client extends AbstractEntity implements Serializable {
 	private String firstLastName;
 	private String secondLastName;
 	private String dni;
+	private List<Contract> contract;
 
 	// Getters y setters de las propiedades
 	@Id
@@ -76,6 +79,15 @@ public class Client extends AbstractEntity implements Serializable {
 		this.dni = dni;
 	}
 
+	@OneToMany(mappedBy = "client")
+	public List<Contract> getContract() {
+		return contract;
+	}
+
+	public void setContract(List<Contract> contract) {
+		this.contract = contract;
+	}
+
 	// toString
 	@Override
 	public String toString() {
@@ -88,5 +100,4 @@ public class Client extends AbstractEntity implements Serializable {
 	public Long getId() {
 		return this.clientId;
 	}
-
 }

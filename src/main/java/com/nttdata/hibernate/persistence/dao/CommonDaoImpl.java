@@ -20,9 +20,6 @@ public abstract class CommonDaoImpl<T extends AbstractEntity> implements CommonD
 
 	/** Sesión de conexión a BD */
 	private Session session;
-	
-	/** Consulta a la base de datos */
-//	private final String consult = "FROM "  + this.entityClass.getName();
 
 	/**
 	 * Constructor de la clase

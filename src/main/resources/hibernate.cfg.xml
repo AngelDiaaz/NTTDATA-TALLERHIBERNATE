@@ -23,6 +23,7 @@
 
 		<!-- MAPEOS -->
 		<mapping class="com.nttdata.hibernate.persistence.models.Client"/>
+		<mapping class="com.nttdata.hibernate.persistence.models.Contract"/>
 
 	</session-factory>
 </hibernate-configuration>
