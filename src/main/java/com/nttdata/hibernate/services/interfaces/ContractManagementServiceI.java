@@ -2,6 +2,7 @@ package com.nttdata.hibernate.services.interfaces;
 
 import java.util.List;
 
+import com.nttdata.hibernate.persistence.models.Client;
 import com.nttdata.hibernate.persistence.models.Contract;
 
 /**
@@ -54,4 +55,13 @@ public interface ContractManagementServiceI {
 	 * @return List con los contratos que estan asociados a ese cliente
 	 */
 	public List<Contract> searchByClient(final Long clientId);
+	
+	
+	/**
+	 * Metodo que saca los clientes de un contrato concreto, a través del ID del contrato
+	 * 
+	 * @param contractId Id del contrato donde quiero sacar los clientes
+	 * @return Clientes vinculados a ese contrato
+	 */
+	public List<Client> searchClientByContract(final Long contractId);
 }

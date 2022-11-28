@@ -7,6 +7,7 @@ import org.hibernate.Session;
 
 import com.nttdata.hibernate.persistence.dao.ContractDaoImpl;
 import com.nttdata.hibernate.persistence.interfaces.ContractDaoI;
+import com.nttdata.hibernate.persistence.models.Client;
 import com.nttdata.hibernate.persistence.models.Contract;
 import com.nttdata.hibernate.services.interfaces.ContractManagementServiceI;
 
@@ -119,5 +120,24 @@ public class ContractManagementServiceImpl implements ContractManagementServiceI
 			contract = contractDao.searchByClient(clientId);
 		}
 		return contract;
+	}
+	
+	/**
+	 * Metodo que saca los clientes de un contrato concreto, a través del ID del contrato
+	 * 
+	 * @param contractId Id del contrato donde quiero sacar los clientes
+	 * @return Clientes vinculados a ese contrato
+	 */
+	@Override
+	public List<Client> searchClientByContract(final Long contractId) {
+		List<Client> client = null;
+
+		// Si el id es diferente de 0
+		if (contractId != 0) {
+
+			// Cliente con el ID
+			client = contractDao.searchClientByContract(contractId);
+		}
+		return client;
 	}
 }

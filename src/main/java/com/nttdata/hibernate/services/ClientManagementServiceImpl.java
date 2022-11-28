@@ -152,5 +152,23 @@ public class ClientManagementServiceImpl implements ClientManagementServiceI {
 		}
 		return playersList;
 	}
+	
+	/**
+	 * Metodo que saca los clientes a traves de su nombre y el precio del contrato
+	 * 
+	 * @param name Nombre de los clientes
+	 * @param price Precio del contrato
+	 * @return Lista de clientes
+	 */
+	@Override
+	public List<Client> searchClientByNameAndPrice(final String name, final int price) {
+		List<Client> client = null;
+
+		// Si el nombre no es nulo
+		if (name != null) {
+			client = clientDao.searchClientByNameAndPrice(name, price);
+		}
+		return client;
+	}
 
 }

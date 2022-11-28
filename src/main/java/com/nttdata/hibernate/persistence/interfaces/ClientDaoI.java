@@ -34,4 +34,14 @@ public interface ClientDaoI extends CommonDaoI<Client> {
 	 * @return Clientes que contienen ese secondLastName
 	 */
 	public List<Client> searchBySecondLastName(final String secondLastName);
+	
+	
+	/**
+	 * Metodo que saca los clientes a traves de su nombre y el precio del contrato
+	 * 
+	 * @param name Nombre de los clientes
+	 * @param price Precio del contrato
+	 * @return Lista de clientes
+	 */
+	public List<Client> searchClientByNameAndPrice(final String name, final int price);
 }

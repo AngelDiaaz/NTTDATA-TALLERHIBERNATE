@@ -21,12 +21,6 @@ import javax.persistence.Transient;
 @Entity
 @Table(name = "TABLE_CONTRACTS")
 public class Contract extends AbstractEntity implements Serializable {
-	@Override
-	public String toString() {
-		return "Contract [contractId=" + contractId + ", dateValidity=" + dateValidity + ", dateExpiration="
-				+ dateExpiration + ", monthlyPrice=" + monthlyPrice + ", client=" + client + "]";
-	}
-
 	/** SERIAL VERSION */
 	private static final long serialVersionUID = 1L;
 
@@ -84,6 +78,12 @@ public class Contract extends AbstractEntity implements Serializable {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+	
+	@Override
+	public String toString() {
+		return "Contract [contractId=" + contractId + ", dateValidity=" + dateValidity + ", dateExpiration="
+				+ dateExpiration + ", monthlyPrice=" + monthlyPrice + ", client=" + client + "]";
 	}
 
 	@Transient

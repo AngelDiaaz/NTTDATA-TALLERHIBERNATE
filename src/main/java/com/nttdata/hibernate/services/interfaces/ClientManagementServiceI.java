@@ -69,4 +69,14 @@ public interface ClientManagementServiceI {
 	 * @return List con todos los clientes que tienen ese segundo apellido
 	 */
 	public List<Client> searchBySecondLastName(String secondLastName);
+	
+	/**
+	 * Metodo que saca los clientes a traves de su nombre y el precio del contrato
+	 * 
+	 * @param name Nombre de los clientes
+	 * @param price Precio del contrato
+	 * @return Lista de clientes
+	 */
+	public List<Client> searchClientByNameAndPrice(final String name, final int price);
+
 }
